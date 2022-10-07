@@ -14,7 +14,6 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c ". /usr/local/share/nv
 
 RUN apt update \
     && apt -y install python3-dev python3-pip nodejs npm gcc musl-dev acl
-RUN curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | bash
 RUN bash -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b $INSTALL_DIR
 
 # #  renames ------------------------------------------------------------------------

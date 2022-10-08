@@ -9,7 +9,8 @@ resource "github_repository" "this" {
   topics                                  = var.topics
   vulnerability_alerts                    = true
   ignore_vulnerability_alerts_during_read = false
-
+  is_template                             = var.is_template
+  auto_init                               = var.is_template
   dynamic "template" {
     for_each = var.is_template ? [] : [1]
     content {

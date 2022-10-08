@@ -47,4 +47,7 @@ locals {
   flat_domain      = replace(local.domain, ".", "")
   twitter_username = local.flat_domain
   default_template = "${local.flat_domain}/oss-template"
+  is_testing       = endswith(terraform.workspace, "-testing")
+  content_folder   = local.is_testing ? "test" : "prod"
+  root_team_name   = local.is_testing ? "${local.flat_domain}-testing" : local.flat_domain
 }

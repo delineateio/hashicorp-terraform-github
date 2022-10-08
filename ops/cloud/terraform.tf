@@ -6,12 +6,7 @@ terraform {
       version = ">= 5.3.0, < 6.0.0"
     }
   }
-  backend "remote" {
-    organization = "delineateio"
-    workspaces {
-      name = "github-delineateio"
-    }
-  }
+  backend "remote" {}
 }
 
 provider "github" {}

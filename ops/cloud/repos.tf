@@ -1,8 +1,14 @@
+locals {
+  all_repos      = { for r in var.repos : r.name => r }
+  filtered_repos = local.is_testing ? { for k, v in local.all_repos : k => v if k != "oss-template" } : local.all_repos
+}
+
 module "github" {
-  for_each = { for r in var.repos : r.name => r }
+  for_each = local.filtered_repos
 
   source = "./modules/repository"
 
+  root_team_name    = local.root_team_name
   flat_domain       = local.flat_domain
   name              = each.value.name
   description       = each.value.description
@@ -15,4 +21,9 @@ module "github" {
   visibility        = each.value.visibility
   is_template       = each.value.is_template
   default_template  = each.value.is_template ? "" : local.default_template
+
+  # make sure org changes are made before applying repos
+  depends_on = [
+    github_organization_settings.this
+  ]
 }

@@ -8,7 +8,7 @@ resource "github_repository_file" "profile" {
   repository          = data.github_repository.github.name
   branch              = "main"
   file                = "profile/README.md"
-  content             = file("${path.module}/content/github/profile/README.md")
+  content             = file("${path.module}/content/github/profile/${local.content_folder}/README.md")
   commit_message      = "Profile updated on '${timestamp()}'"
   commit_author       = local.automation_user
   commit_email        = "${local.automation_user}@${local.domain}"
@@ -21,4 +21,8 @@ resource "github_repository_file" "profile" {
       commit_message
     ]
   }
+
+  depends_on = [
+    module.github
+  ]
 }

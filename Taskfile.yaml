@@ -1,7 +1,8 @@
 version: 3
 
 includes:
-  cloud: ./ops/taskfile.cloud.yaml
+  test: ./ops/taskfile.test.yaml
+  prod: ./ops/taskfile.prod.yaml
 
 tasks:
   init:

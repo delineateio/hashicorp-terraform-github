@@ -3,6 +3,11 @@ variable "flat_domain" {
   type        = string
 }
 
+variable "root_team_name" {
+  description = "name of the root team in the organisation"
+  type        = string
+}
+
 variable "name" {
   description = "name of the github repo"
   type        = string
@@ -59,6 +64,7 @@ variable "default_template" {
 }
 
 locals {
+  root_team_name    = lower(var.root_team_name)
   template_parts    = split("/", var.default_template)
   template_owner    = var.is_template ? "" : lower(local.template_parts[0])
   template_name     = var.is_template ? "" : lower(local.template_parts[1])

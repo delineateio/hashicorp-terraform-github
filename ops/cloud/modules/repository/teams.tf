@@ -1,5 +1,5 @@
 data "github_team" "root" {
-  slug = var.flat_domain
+  slug = local.root_team_name
 }
 
 resource "github_team" "maintainers" {

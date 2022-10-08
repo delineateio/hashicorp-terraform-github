@@ -1,3 +1,8 @@
+domain = "delineate.io"
+description = "Portray or describe (something) precisely."
+location = "London, UK"
+admins = ["jf-delineate"]
+members = []
 repos = [{
     name              = ".github"
     description       = "This repo holds the Github templates to be used across all delineate.io repositories."
@@ -81,6 +86,5 @@ repos = [{
     name              = "hashicorp-terraform-github"
     description       = "This repo manages GitHub organisation and repos using Terraform Cloud"
     topics            = ["github", "terraform"]
-    visibility        = "private"
   }
 ]

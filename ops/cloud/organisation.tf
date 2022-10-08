@@ -5,7 +5,7 @@ resource "github_organization_settings" "this" {
   email                                                    = local.email
   twitter_username                                         = local.twitter_username
   location                                                 = var.location
-  name                                                     = var.domain
+  name                                                     = local.is_testing ? "${var.domain} (testing)" : var.domain
   description                                              = var.description
   has_organization_projects                                = false
   has_repository_projects                                  = false
@@ -26,8 +26,8 @@ resource "github_organization_settings" "this" {
 
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team
 resource "github_team" "root" {
-  name        = local.flat_domain
-  description = "This is the overall team for ${local.flat_domain}"
+  name        = local.root_team_name
+  description = "This is the overall team for ${local.root_team_name}"
   privacy     = "closed"
 }
 

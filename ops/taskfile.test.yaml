@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  init:
+    desc: initialise terraform for test
+    cmds:
+      - terraform -chdir=ops/cloud init -reconfigure -backend-config=config/test.remote.tfbackend
+
+  plan:
+    desc: run terraform test plan
+    deps: ["init"]
+    cmds:
+      - terraform -chdir=ops/cloud plan
+
+  apply:
+    desc: run terraform test apply with auto applies
+    deps: ["init"]
+    cmds:
+      - terraform -chdir=ops/cloud apply -auto-approve

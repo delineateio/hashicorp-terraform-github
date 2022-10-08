@@ -1,0 +1,19 @@
+version: 3
+
+tasks:
+  init:
+    desc: initialise terraform for prod
+    cmds:
+      - terraform -chdir=ops/cloud init -reconfigure -backend-config=config/prod.remote.tfbackend
+
+  plan:
+    desc: run terraform prod plan
+    deps: ["init"]
+    cmds:
+      - terraform -chdir=ops/cloud plan
+
+  apply:
+    desc: run terraform prod apply with auto applies
+    deps: ["init"]
+    cmds:
+      - terraform -chdir=ops/cloud apply -auto-approve

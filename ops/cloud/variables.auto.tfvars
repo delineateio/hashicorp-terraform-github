@@ -7,6 +7,7 @@ repos = [{
     name              = ".github"
     description       = "This repo holds the Github templates to be used across all delineate.io repositories."
     topics            = ["templates"]
+    default_branch = "master"
     branch_protection = false
   },
   {

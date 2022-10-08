@@ -6,7 +6,7 @@ data "github_repository" "github" {
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file
 resource "github_repository_file" "profile" {
   repository          = data.github_repository.github.name
-  branch              = "main"
+  branch              = "master"
   file                = "profile/README.md"
   content             = file("${path.module}/content/github/profile/${local.content_folder}/README.md")
   commit_message      = "Profile updated on '${timestamp()}'"

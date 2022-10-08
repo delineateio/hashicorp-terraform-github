@@ -29,6 +29,7 @@ repos:
       name: end of file fixer
     - id: check-added-large-files
       name: check added large files
+      args: ['--maxkb=650']
     - id: check-yaml
       name: check yaml
     - id: check-json

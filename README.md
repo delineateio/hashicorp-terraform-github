@@ -1,4 +1,3 @@
-[![CircleCI][circleci-url]][circleci-url]
 [![PRs Welcome][pr-welcome-shield]][pr-welcome-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -13,16 +12,14 @@
   <h2 align="center">delineate.io</h2>
   <p align="center">portray or describe (something) precisely.</p>
 
-  <h3 align="center">[PROJECT_TITLE]</h3>
+  <h3 align="center">GitHub Terraform Management</h3>
 
   <p align="center">
-    [PROJECT_DESCRIPTION]
+    This repo demonstrates using Hashicorp Terraform to manage a GitHub organisation and it's repositories.
     <br />
     <a href="https://github.com/delineateio/oss-template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/delineateio/oss-template">View Demo</a>
-    ·
     <a href="https://github.com/delineateio/oss-template/issues">Report Bug</a>
     ·
     <a href="https://github.com/delineateio/oss-template/issues">Request Feature</a>
@@ -36,13 +33,9 @@
 
 - [About The Project](#about-the-project)
 - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Local Dependencies](#local-dependencies)
-  - [Local Setup](#local-setup)
-- [Usage](#usage)
-- [Infrastructure](#infrastructure)
-  - [Local Services](#local-services)
-  - [Cloud Infrastructure](#cloud-infrastructure)
+- [Terraform Cloud Setup](#terraform-cloud-setup)
+- [Manage Repos](#manage-repos)
+- [GitHub Automation](#github-automation)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -53,10 +46,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The repo description should be added here and describe at least:
+This repo provides a Terraform configuration to manage a GitHub organisation.
 
-* Purpose of the repo e.g. problem/opportunity statement
-* High level description of the overall approach/solution
+The solution uses Terraform Cloud as the centralised provisioning infrastructure to manage state and required secrets.  In this specific implementation two GitHub organisations are used, one for testing and one for production.
 
 ## Built With
 
@@ -66,60 +58,54 @@ Further logos can be inserted to highlight the specific technologies used to cre
 | --- | ----------- |
 | ![pre-commit](https://img.shields.io/badge/precommit-%235835CC.svg?style=for-the-badge&logo=precommit&logoColor=white) | Pre-commit `git` hooks that perform checks before pushes|
 | ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) | Source control management platform  |
-| ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) | Containerise applications and provide local environment |
-| ![CircleCI](https://img.shields.io/badge/CIRCLECI-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white) | CI/CD pipeline and services |
-| ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) | Cloud infrastructure provisioning configuration|
-| ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) | Security and DNS services for internet services|
-| ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) | Hosting of services on Google Cloud |
+| ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) | Providing of a standardised local environment |
+| ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) | GitHub provisioning configuration|
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Terraform Cloud Setup
 
-To get a local copy up and running follow these simple steps.
+A [Terarform Cloud](https://www.terraform.io/) acount will be required.  In this example there are two workspaces defined, these workspaces are configured using Terraform remote backend files [here](./ops/cloud/config/).
 
-### Local Dependencies
+![alt text](assets/terraform.png "Title")
 
-A number of local dependencies are required.  To review the local dependencies run `task dependencies:list`.  If new local dependencies then they should be added to the correct Taskfile in `./os` e.g. `taskfile.darwin.yaml`.
+Two env variables need to be configured in each Terraform Cloud workspace for GitHub
 
-> Note that currently only `macOS` is configured and a PR should be submitted if either `Linux` or `Windows` are required.
+* `GITHUB_OWNER` should be set to the organisation slug
+* `GITHUB_TOKEN` is the GitHub personal access token (PAT)
 
-### Local Setup
+To create a new GitHub PAT then review the offical documentation [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-This repo follows the principle of minimal manual setup of the local development environment.
+## Manage Repos
 
- A `task` target has been provided for simplicity ```task init```, the `taskfile.yaml` file can be inspected for more details.
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)._
-
-## Infrastructure
-
-### Local Services
-
-A boilerplate `docker-compose` file is provided that can be used to manage local environment services.  The stack can be found at `ops/local/stack.yaml`.
+The repos to create and manage are defined in the `auto.tfvars` file [here](./ops/cloud/variables.auto.tfvars).  The following attributes can be confirmed per repo.
 
 ```shell
-# stands up the local services
-task local:up
-
-# tears down the local services
-task local:down
+name              = string
+description       = string
+homepage_url      = optional(string, "")
+branch_protection = optional(bool, true)
+default_branch    = optional(string, "main")
+topics            = optional(list(string), [])
+maintainers       = optional(list(string), [])
+members           = optional(list(string), [])
+visibility        = optional(string, "public")
+is_template       = optional(bool, false)
 ```
 
-### Cloud Infrastructure
+<!-- GITHUB AUTOMATION -->
+## GitHub Automation
 
-A boilerplate configuration is provided for using `terraform` configuration to provision cloud infrastructure.  [tfenv](https://github.com/tfutils/tfenv) is used to select the version of `terraform` to use.  The repo template provides a single component in `ops/cloud/component`.
+For the exact configuration that runs review the [organisation](./ops/cloud/) config and [repo module](./ops/cloud/modules/).  The following commands can be used:
 
 ```shell
-# plans the network terraform config
-task cloud:plan LAYER=component
+# Test organisation plan and apply
+task test:plan
+task test:apply
 
-# auto approves applying the network terraform config
-task cloud:apply LAYER=component
+# Prod organisation plan and apply
+task prod:plan
+task prod:apply
+
 ```
 
 <!-- ROADMAP -->
@@ -158,7 +144,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[circleci-url]: https://img.shields.io/circleci/build/gh/delineateio/oss-template?style=for-the-badge&logo=circleci
 [pr-welcome-shield]: https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=for-the-badge&logo=github
 [pr-welcome-url]: https://github.com/delineateio/oss-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
 [contributors-shield]: https://img.shields.io/github/contributors/delineateio/oss-template.svg?style=for-the-badge&logo=github

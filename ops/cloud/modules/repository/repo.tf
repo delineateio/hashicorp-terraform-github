@@ -31,7 +31,7 @@ resource "github_branch_protection" "this" {
   count                           = local.branch_protection ? 1 : 0
   repository_id                   = github_repository.this.node_id
   pattern                         = github_branch_default.default.branch
-  enforce_admins                  = true
+  enforce_admins                  = false
   allows_deletions                = false
   require_signed_commits          = true
   allows_force_pushes             = false

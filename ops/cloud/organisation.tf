@@ -32,13 +32,6 @@ resource "github_team" "root" {
 }
 
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
-resource "github_membership" "admins" {
-  for_each = var.admins
-  username = each.key
-  role     = "admin"
-}
-
-# https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership
 resource "github_membership" "members" {
   for_each = var.members
   username = each.key

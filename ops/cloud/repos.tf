@@ -21,6 +21,7 @@ module "github" {
   visibility        = each.value.visibility
   is_template       = each.value.is_template
   default_template  = each.value.is_template ? "" : local.default_template
+  is_testing        = local.is_testing
 
   # make sure org changes are made before applying repos
   depends_on = [

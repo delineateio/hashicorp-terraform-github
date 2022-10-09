@@ -4,7 +4,7 @@ tasks:
   init:
     desc: initialise terraform for test
     cmds:
-      - terraform -chdir=ops/cloud init -reconfigure -backend-config=config/test.remote.tfbackend
+      - terraform -chdir=ops/cloud init -upgrade -reconfigure -backend-config=config/test.remote.tfbackend
 
   plan:
     desc: run terraform test plan
@@ -17,3 +17,9 @@ tasks:
     deps: ["init"]
     cmds:
       - terraform -chdir=ops/cloud apply -auto-approve
+
+  destroy:
+    desc: run terraform test destroy with auto applies
+    deps: ["init"]
+    cmds:
+      - terraform -chdir=ops/cloud destroy -auto-approve

@@ -1,14 +1,14 @@
 domain      = "delineate.io"
 description = "Portray or describe (something) precisely."
 location    = "London, UK"
-admins      = ["jf-delineate"]
 members     = []
-repos = [{
-  name              = ".github"
-  description       = "This repo holds the Github templates to be used across all delineate.io repositories."
-  topics            = ["templates"]
-  default_branch    = "master"
-  branch_protection = false
+repos = [
+  {
+    name              = ".github"
+    description       = "This repo holds the Github templates to be used across all delineate.io repositories."
+    topics            = ["templates"]
+    default_branch    = "master"
+    branch_protection = false
   },
   {
     name              = ".allstar"

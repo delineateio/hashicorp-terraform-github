@@ -13,14 +13,14 @@ variable "location" {
   type        = string
 }
 
-variable "admins" {
-  description = "list of the admins for the organisation"
-  type        = set(string)
-}
-
 variable "members" {
   description = "list of the members for the organisation"
   type        = set(string)
+}
+
+variable "api_token" {
+  description = "token for GitHub API calls"
+  type        = string
 }
 
 variable "repos" {

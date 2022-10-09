@@ -5,5 +5,9 @@ terraform {
       source  = "integrations/github"
       version = ">= 5.3.0, < 6.0.0"
     }
+    restapi = {
+      source  = "registry.terraform.io/mastercard/restapi"
+      version = ">= 1.17.0, < 2.0.0"
+    }
   }
 }

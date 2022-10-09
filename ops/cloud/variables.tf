@@ -40,7 +40,7 @@ variable "repos" {
 
 locals {
   automation_user  = lower("terraform")
-  billing_email    = lower("github@${var.domain}")
+  billing_email    = lower("oss@${var.domain}")
   blog             = lower("https://blog.${var.domain}")
   domain           = lower(var.domain)
   email            = lower("oss@${var.domain}")

@@ -8,13 +8,11 @@ repos = [
     description       = "This repo holds the Github templates to be used across all delineate.io repositories."
     topics            = ["templates"]
     default_branch    = "master"
-    branch_protection = false
   },
   {
     name              = ".allstar"
     description       = "This repo configures OSSF Allstar for the organisation."
     topics            = ["security"]
-    branch_protection = false
   },
   {
     name        = "delineateio-www"
@@ -41,7 +39,6 @@ repos = [
     description       = "This is a template for personal repos that includes standard boilerplate set up"
     topics            = ["gcp", "github", "terraform"]
     is_template       = true
-    branch_protection = false
   },
   {
     name        = "hashicorp-packer-example"
@@ -94,6 +91,5 @@ repos = [
     name              = "hashicorp-terraform-github"
     description       = "This repo manages GitHub organisation and repos using Terraform Cloud"
     topics            = ["github", "terraform"]
-    branch_protection = false
   }
 ]

@@ -32,10 +32,9 @@
 		}
 	},
 	"features": {
-		"docker-from-docker": {
-			"version": "latest",
-			"moby": true
-		}
+        "ghcr.io/devcontainers/features/docker-from-docker:1": {
+            "version": "latest"
+        }
 	},
 	"remoteUser": "vscode"
 }

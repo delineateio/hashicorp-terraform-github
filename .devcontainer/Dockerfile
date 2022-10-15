@@ -16,19 +16,19 @@ RUN apt update \
     && apt -y install python3-dev python3-pip nodejs npm gcc musl-dev acl
 RUN bash -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b $INSTALL_DIR
 
-# #  renames ------------------------------------------------------------------------
+# renames -------------------------------------------------------------------------
 
 RUN ln -sf python3 /usr/bin/python
 RUN ln -sf pip3 /usr/bin/pip
 RUN ln -sf $INSTALL_DIR/task /usr/bin/task
 
-# #  pip installs -------------------------------------------------------------------
+# pip installs -------------------------------------------------------------------
 
 COPY ./requirements.txt /usr/
 RUN pip install --no-cache --upgrade pip setuptools
 RUN pip install -r /usr/requirements.txt
 
-# #  tfenv --------------------------------------------------------------------------
+# tfenv --------------------------------------------------------------------------
 
 RUN mkdir -p $INSTALL_DIR
 RUN git clone --depth=1 https://github.com/tfutils/tfenv.git $INSTALL_DIR/tfenv
@@ -37,6 +37,6 @@ RUN ln -s $INSTALL_DIR/tfenv/bin/* /usr/bin
 RUN tfenv install $TFENV_VERSION
 RUN tfenv use $TFENV_VERSION
 
-# #  init ---------------------------------------------------------------------------
+# init ---------------------------------------------------------------------------
 
 RUN echo "task init" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc

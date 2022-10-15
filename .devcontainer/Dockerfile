@@ -39,4 +39,5 @@ RUN tfenv use $TFENV_VERSION
 
 # init ---------------------------------------------------------------------------
 
+RUN echo "source /home/vscode/.devcontainer.env" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc
 RUN echo "task init" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc

@@ -13,7 +13,7 @@ resource "github_repository" "this" {
   allow_rebase_merge                      = true
   squash_merge_commit_title               = "PR_TITLE"
   squash_merge_commit_message             = "PR_BODY"
-  delete_branch_on_merge                  = true
+  delete_branch_on_merge                  = var.is_vercel_project ? false : true
   archive_on_destroy                      = local.archive_on_destroy
   topics                                  = var.topics
   vulnerability_alerts                    = true

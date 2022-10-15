@@ -19,6 +19,7 @@ repos = [
     description  = "Blog site produced using Hugo published using Vercel at https://blog.delineate.io"
     homepage_url = "https://blog.delineate.io"
     topics       = ["hugo", "website"]
+    is_vercel_project = true
   },
   {
     name         = "delineateio-theme"
@@ -30,6 +31,7 @@ repos = [
     name        = "delineateio-www"
     description = "Holding website hosted on Github Pages until work starts on the real website."
     topics      = ["website"]
+    is_vercel_project = true
   },
   {
     name        = "fast-api-example"
@@ -96,10 +98,5 @@ repos = [
     name        = "local-cloud-functions-example"
     description = "This repo demonstrates an example of local http and pub/sub clopud functionss"
     topics      = ["gcp", "gcp-cloud-function", "python"]
-  },
-  # {
-  #   name        = "modular-accounts"
-  #   description = "This repo demonstrates an example of local http and pub/sub clopud functions "
-  #   topics      = ["gcp", "gcp-cloud-function", "python"]
-  # }
+  }
 ]

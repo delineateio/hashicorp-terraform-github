@@ -63,6 +63,11 @@ variable "default_template" {
   type        = string
 }
 
+variable "is_vercel_project" {
+  description = "indicates if this is a vercel project"
+  type        = bool
+}
+
 variable "is_testing" {
   description = "indicates if this run is a testing run"
   type        = bool

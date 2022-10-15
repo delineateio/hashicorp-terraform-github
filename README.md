@@ -17,12 +17,12 @@
   <p align="center">
     This repo demonstrates using Hashicorp Terraform to manage a GitHub organisation and it's repositories.
     <br />
-    <a href="https://github.com/delineateio/oss-template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/delineateio/hashicorp-terraform-github"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/delineateio/oss-template/issues">Report Bug</a>
+    <a href="https://github.com/delineateio/hashicorp-terraform-github/issues">Report Bug</a>
     ·
-    <a href="https://github.com/delineateio/oss-template/issues">Request Feature</a>
+    <a href="https://github.com/delineateio/hashicorp-terraform-github/issues">Request Feature</a>
   </p>
 </p>
 
@@ -79,7 +79,7 @@ To create a new GitHub PAT then review the offical documentation [here](https://
 
 The repos to create and manage are defined in the `auto.tfvars` file [here](./ops/cloud/variables.auto.tfvars).  The following attributes can be confirmed per repo.
 
-```shell
+```h
 name              = string
 description       = string
 homepage_url      = optional(string, "")
@@ -89,6 +89,7 @@ topics            = optional(list(string), [])
 maintainers       = optional(list(string), [])
 members           = optional(list(string), [])
 visibility        = optional(string, "public")
+is_vercel_project = optional(bool, false)
 is_template       = optional(bool, false)
 ```
 
@@ -111,7 +112,7 @@ task prod:apply
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/delineateio/oss-template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/delineateio/hashicorp-terraform-github/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -145,14 +146,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [pr-welcome-shield]: https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=for-the-badge&logo=github
-[pr-welcome-url]: https://github.com/delineateio/oss-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
-[contributors-shield]: https://img.shields.io/github/contributors/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[contributors-url]: https://github.com/delineateio/oss-template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[forks-url]: https://github.com/delineateio/oss-template/network/members
-[stars-shield]: https://img.shields.io/github/stars/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[stars-url]: https://github.com/delineateio/oss-template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[issues-url]: https://github.com/delineateio/oss-template/issues
-[license-shield]: https://img.shields.io/github/license/delineateio/oss-template.svg?style=for-the-badge&logo=github
-[license-url]: https://github.com/delineateio/oss-template/blob/master/LICENSE
+[pr-welcome-url]: https://github.com/delineateio/hashicorp-terraform-github/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue
+[contributors-shield]: https://img.shields.io/github/contributors/delineateio/hashicorp-terraform-github.svg?style=for-the-badge&logo=github
+[contributors-url]: https://github.com/delineateio/hashicorp-terraform-github/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/delineateio/hashicorp-terraform-github.svg?style=for-the-badge&logo=github
+[forks-url]: https://github.com/delineateio/hashicorp-terraform-github/network/members
+[stars-shield]: https://img.shields.io/github/stars/delineateio/hashicorp-terraform-github.svg?style=for-the-badge&logo=github
+[stars-url]: https://github.com/delineateio/hashicorp-terraform-github/stargazers
+[issues-shield]: https://img.shields.io/github/issues/delineateio/hashicorp-terraform-github.svg?style=for-the-badge&logo=github
+[issues-url]: https://github.com/delineateio/hashicorp-terraform-github/issues
+[license-shield]: https://img.shields.io/github/license/delineateio/hashicorp-terraform-github.svg?style=for-the-badge&logo=github
+[license-url]: https://github.com/delineateio/hashicorp-terraform-github/blob/master/LICENSE

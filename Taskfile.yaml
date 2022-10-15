@@ -1,5 +1,7 @@
 version: 3
 
+silent: true
+
 includes:
   test: ./ops/taskfile.test.yaml
   prod: ./ops/taskfile.prod.yaml
@@ -8,10 +10,10 @@ tasks:
   init:
     desc: initialise local environment
     cmds:
-      - tfenv pin
+      - tfenv pin &>/dev/null &
       - task: pre-commit:init
 
   pre-commit:init:
     desc: initialises pre-commit hooks
     cmds:
-      - pre-commit install
+      - pre-commit install &>/dev/null &

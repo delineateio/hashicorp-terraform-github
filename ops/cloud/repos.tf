@@ -19,6 +19,7 @@ module "github" {
   maintainers       = each.value.maintainers
   members           = each.value.members
   visibility        = each.value.visibility
+  archived          = each.value.archived
   is_template       = each.value.is_template
   default_template  = each.value.is_template ? "" : local.default_template
   is_vercel_project = each.value.is_vercel_project

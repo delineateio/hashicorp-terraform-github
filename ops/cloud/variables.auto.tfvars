@@ -106,5 +106,10 @@ repos = [
     name        = "python-mongodb-api"
     description = "This repo demonstrates using building a Python API using FastAPI & MongoDB"
     topics      = ["fastapi", "mongodb", "python"]
+  },
+  {
+    name        = "go-neat"
+    description = "This repo is a utility cli for keeping local environment nice and tidy"
+    topics      = ["go", "cobra"]
   }
 ]

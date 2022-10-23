@@ -1,6 +1,5 @@
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default
 resource "github_branch_default" "default" {
-  count      = local.branch_protection ? 1 : 0
   repository = local.name
   branch     = var.default_branch
 }
@@ -9,7 +8,7 @@ resource "github_branch_default" "default" {
 resource "github_branch_protection" "this" {
   count                           = local.branch_protection ? 1 : 0
   repository_id                   = var.is_testing ? local.fork_node_id : github_repository.this[0].node_id
-  pattern                         = github_branch_default.default[0].branch
+  pattern                         = github_branch_default.default.branch
   enforce_admins                  = false
   allows_deletions                = false
   require_signed_commits          = true

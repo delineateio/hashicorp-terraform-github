@@ -53,6 +53,11 @@ variable "visibility" {
   type        = string
 }
 
+variable "archived" {
+  description = "indicated if github repo is archived"
+  type        = string
+}
+
 variable "is_template" {
   description = "indicates if template github repo"
   type        = bool
@@ -79,7 +84,7 @@ locals {
   template_owner     = var.is_template ? "" : lower(local.template_parts[0])
   template_name      = var.is_template ? "" : lower(local.template_parts[1])
   name               = lower(var.name)
-  decription         = lower(var.description)
+  description        = lower(var.description)
   homepage_url       = lower(var.homepage_url)
   visibility         = lower(var.visibility)
   branch_protection  = local.visibility == "public" && var.branch_protection

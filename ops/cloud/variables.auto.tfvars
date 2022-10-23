@@ -15,10 +15,10 @@ repos = [
     topics      = ["security"]
   },
   {
-    name         = "delineateio-blog"
-    description  = "Blog site produced using Hugo published using Vercel at https://blog.delineate.io"
-    homepage_url = "https://blog.delineate.io"
-    topics       = ["hugo", "website"]
+    name              = "delineateio-blog"
+    description       = "Blog site produced using Hugo published using Vercel at https://blog.delineate.io"
+    homepage_url      = "https://blog.delineate.io"
+    topics            = ["hugo", "website"]
     is_vercel_project = true
   },
   {
@@ -28,9 +28,10 @@ repos = [
     topics       = ["hugo", "hugo-theme"]
   },
   {
-    name        = "delineateio-www"
-    description = "Holding website hosted on Github Pages until work starts on the real website."
-    topics      = ["website"]
+    name              = "delineateio-www"
+    description       = "Holding website hosted on Github Pages until work starts on the real website."
+    homepage_url      = "https://www.delineate.io"
+    topics            = ["website"]
     is_vercel_project = true
   },
   {
@@ -60,13 +61,15 @@ repos = [
   },
   {
     name        = "hashicorp-vagrant-rocky"
-    description = "This repo provisions a general purpose Rocky Linux VM using Hashicorp Vagrant.."
+    description = "This repo provisions a general purpose Rocky Linux VM using Hashicorp Vagrant."
     topics      = ["vagrant"]
   },
   {
     name        = "hashicorp-vagrant-box"
     description = "Pre-configured Vagrant Cloud box with the required tools for engineers working on all www.delineate.io projects"
     topics      = ["ansible", "devops", "vagrant", "virtualbox"]
+    archived    = true
+    visibility  = "private"
   },
   {
     name        = "k8s-go-tool-example"
@@ -96,7 +99,12 @@ repos = [
   },
   {
     name        = "local-cloud-functions-example"
-    description = "This repo demonstrates an example of local http and pub/sub clopud functionss"
+    description = "This repo demonstrates an example of local http and pub/sub cloud functionss"
     topics      = ["gcp", "gcp-cloud-function", "python"]
+  },
+  {
+    name        = "python-mongodb-api"
+    description = "This repo demonstrates using building a Python API using FastAPI & MongoDB"
+    topics      = ["fastapi", "mongodb", "python"]
   }
 ]

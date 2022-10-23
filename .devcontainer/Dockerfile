@@ -1,25 +1,21 @@
-ARG VARIANT=1-bullseye
-FROM mcr.microsoft.com/devcontainers/go:1.19-bullseye
+ARG VARIANT="3.10-bullseye"
+FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
-ENV PYTHONUNBUFFERED=1
-ENV INSTALL_DIR /installs
 ENV TFENV_VERSION 1.3.1
+ENV INSTALL_DIR /installs
 
 # nvm -----------------------------------------------------------------------------
 
 ARG NODE_VERSION="lts/*"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c ". /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# program installs ----------------------------------------------------------------
+# intsalls ------------------------------------------------------------------------
 
-RUN apt update \
-    && apt -y install python3-dev python3-pip nodejs npm gcc musl-dev acl
+RUN apt update && apt -y install gcc musl-dev acl
+
+# go-task -------------------------------------------------------------------------
+
 RUN bash -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b $INSTALL_DIR
-
-# renames -------------------------------------------------------------------------
-
-RUN ln -sf python3 /usr/bin/python
-RUN ln -sf pip3 /usr/bin/pip
 RUN ln -sf $INSTALL_DIR/task /usr/bin/task
 
 # pip installs -------------------------------------------------------------------

@@ -2,7 +2,7 @@
 	"name": "Development",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "1.19-bullseye" }
+		"args": { "VARIANT": "3.10-bullseye" }
 	},
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined", "--init" ],
 	"mounts": [
@@ -12,12 +12,8 @@
 	"customizations": {
 		"vscode": {
 			"settings": {
-				"go.toolsManagement.checkForUpdates": "local",
-				"go.useLanguageServer": true,
-				"go.gopath": "/go",
-				"go.goroot": "/usr/local/go",
-        "terraform.editor.formatOnSave": true
-      },
+        		"terraform.editor.formatOnSave": true
+      		},
 			"extensions": [
 				"editorconfig.edi",
 				"gruntfuggly.todo-tree",
@@ -26,6 +22,14 @@
 				"snyk-security.snyk-vulnerability-scanner",
 				"tyriar.sort-lines"
 			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "latest"
 		}
 	},
 	"remoteUser": "vscode"

@@ -111,5 +111,12 @@ repos = [
     name        = "go-neat"
     description = "This repo is a utility cli for keeping local environment nice and tidy"
     topics      = ["go", "cobra"]
+    visibility  = "private"
+  },
+  {
+    name        = "mac-ansible-script"
+    description = "This repo shows install and configuration"
+    topics      = ["ansible"]
+    visibility  = "private"
   }
 ]

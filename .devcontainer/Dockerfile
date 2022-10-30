@@ -24,15 +24,6 @@ COPY ./requirements.txt /usr/
 RUN pip install --no-cache --upgrade pip setuptools
 RUN pip install -r /usr/requirements.txt
 
-# tfenv --------------------------------------------------------------------------
-
-RUN mkdir -p $INSTALL_DIR
-RUN git clone --depth=1 https://github.com/tfutils/tfenv.git $INSTALL_DIR/tfenv
-RUN setfacl -R -m u:vscode:rwx $INSTALL_DIR/tfenv
-RUN ln -s $INSTALL_DIR/tfenv/bin/* /usr/bin
-RUN tfenv install $TFENV_VERSION
-RUN tfenv use $TFENV_VERSION
-
 # init ---------------------------------------------------------------------------
 
 RUN echo "source /home/vscode/.devcontainer.env" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc

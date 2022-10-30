@@ -6,19 +6,19 @@ repos = [
   {
     name           = ".github"
     description    = "Github configuration for this organisation repos"
-    topics         = ["templates"]
+    topics         = ["templates", "oss"]
     default_branch = "master"
   },
   {
     name        = ".allstar"
     description = "OSSF Allstar configiration for this organisation repos"
-    topics      = ["security"]
+    topics      = ["security", "oss"]
   },
   {
     name              = "delineateio-blog"
     description       = "Blog site produced using Hugo published using Vercel at https://blog.delineate.io"
     homepage_url      = "https://blog.delineate.io"
-    topics            = ["hugo", "website"]
+    topics            = ["hugo", "website", "vercel"]
     is_vercel_project = true
   },
   {
@@ -31,18 +31,18 @@ repos = [
     name              = "delineateio-www"
     description       = "Holding website hosted on Github Pages until work starts on the real website."
     homepage_url      = "https://www.delineate.io"
-    topics            = ["website"]
+    topics            = ["website", "vercel"]
     is_vercel_project = true
   },
   {
     name        = "fast-api-example"
     description = "Combination of technologies to rapidly build and deploy Python APIs."
-    topics      = ["fastapi", "waypoint"]
+    topics      = ["fastapi", "waypoint", "python"]
   },
   {
     name        = "gcp-scheduled-function-example"
     description = "Using Terraform to provision scheduled cloud functions securely on Google Cloud"
-    topics      = ["gcp", "terraform"]
+    topics      = ["gcp", "gcp-cloud-functions", "terraform"]
   },
   {
     name        = "hashicorp-consul-kv-example"
@@ -52,7 +52,7 @@ repos = [
   {
     name        = "hashicorp-packer-example"
     description = "Using Hashicorp Packer to build GCP, Digital Ocean & Docker images"
-    topics      = ["devops", "digitalocean", "packer"]
+    topics      = ["devops", "digitalocean", "packer", "docker"]
   },
   {
     name        = "hashicorp-terraform-github"
@@ -62,7 +62,7 @@ repos = [
   {
     name        = "hashicorp-vagrant-rocky"
     description = "Deployment of a general purpose Rocky Linux VM using Hashicorp Vagrant"
-    topics      = ["vagrant"]
+    topics      = ["vagrant", "linux"]
   },
   {
     name        = "hashicorp-vagrant-box"
@@ -74,12 +74,12 @@ repos = [
   {
     name        = "k8s-go-tool-example"
     description = "Several k8s & container tools for development of Go services"
-    topics      = ["golang", "devops", "k8s"]
+    topics      = ["golang", "devops", "k8s", "skaffold", "ko"]
   },
   {
     name        = "kong-example"
     description = "Multi-node Kong API Gateway deployment playground using Docker Compose"
-    topics      = ["docker-compose", "kong-gateway"]
+    topics      = ["docker-compose", "kong"]
   },
   {
     name        = "multi-service-shared-cache"
@@ -100,7 +100,7 @@ repos = [
   {
     name        = "local-cloud-functions-example"
     description = "Demonstrates building and running http and pub/sub cloud functions locally"
-    topics      = ["gcp", "gcp-cloud-function", "python"]
+    topics      = ["gcp", "gcp-cloud-functions", "python"]
   },
   {
     name        = "python-mongodb-api"
@@ -110,7 +110,7 @@ repos = [
   {
     name        = "go-neat"
     description = "Opinionated Git utility CLI written in Go"
-    topics      = ["go", "viper", "cobra", "go-git", ]
+    topics      = ["golang", "viper", "cobra", "go-git", ]
     visibility  = "private"
   },
   {

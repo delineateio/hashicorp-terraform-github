@@ -1,5 +1,5 @@
 ci:
-    skip: [ggshield, terraform_fmt, terraform_validate, terraform_providers_lock]
+  skip: [ggshield, terraform_fmt, terraform_validate, terraform_providers_lock]
 
 repos:
 

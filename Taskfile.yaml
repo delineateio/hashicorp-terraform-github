@@ -10,7 +10,6 @@ tasks:
   init:
     desc: initialise local environment
     cmds:
-      - tfenv pin &>/dev/null &
       - task: pre-commit:init
 
   pre-commit:init:

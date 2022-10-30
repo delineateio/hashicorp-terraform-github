@@ -89,6 +89,7 @@ topics            = optional(list(string), [])
 maintainers       = optional(list(string), [])
 members           = optional(list(string), [])
 visibility        = optional(string, "public")
+archived          = optional(bool, false)
 is_vercel_project = optional(bool, false)
 is_template       = optional(bool, false)
 ```

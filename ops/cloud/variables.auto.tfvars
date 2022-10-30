@@ -110,7 +110,7 @@ repos = [
   {
     name        = "go-neat"
     description = "Opinionated Git utility CLI written in Go"
-    topics      = ["golang", "viper", "cobra", "go-git", ]
+    topics      = ["golang", "viper", "cobra", "go-git", "zerolog"]
     visibility  = "private"
   },
   {

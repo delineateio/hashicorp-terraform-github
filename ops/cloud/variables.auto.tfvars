@@ -5,13 +5,13 @@ members     = []
 repos = [
   {
     name           = ".github"
-    description    = "This repo holds the Github templates to be used across all delineate.io repositories."
+    description    = "Github configuration for this organisation repos"
     topics         = ["templates"]
     default_branch = "master"
   },
   {
     name        = ".allstar"
-    description = "This repo configures OSSF Allstar for the organisation."
+    description = "OSSF Allstar configiration for this organisation repos"
     topics      = ["security"]
   },
   {
@@ -36,44 +36,44 @@ repos = [
   },
   {
     name        = "fast-api-example"
-    description = "Demonstrate a potential combination of technologies to rapidly build and deploy Python APIs."
+    description = "Combination of technologies to rapidly build and deploy Python APIs."
     topics      = ["fastapi", "waypoint"]
   },
   {
     name        = "gcp-scheduled-function-example"
-    description = "Demonstrate using Terraform to provision scheduled cloud functions securely on Google Cloud"
+    description = "Using Terraform to provision scheduled cloud functions securely on Google Cloud"
     topics      = ["gcp", "terraform"]
   },
   {
     name        = "hashicorp-consul-kv-example"
-    description = "Demonstrates centralized dynamic configuration of microservices without downtime."
+    description = "Demonstrates centralized dynamic configuration of Go microservices without downtime."
     topics      = ["docker", "golang", "microservices"]
   },
   {
     name        = "hashicorp-packer-example"
-    description = "Examples project using Hashicorp Packer to build GCP, Digital Ocean & Docker images"
+    description = "Using Hashicorp Packer to build GCP, Digital Ocean & Docker images"
     topics      = ["devops", "digitalocean", "packer"]
   },
   {
     name        = "hashicorp-terraform-github"
-    description = "This repo manages GitHub organisation and repos using Terraform Cloud"
+    description = "GitHub organisation and repos management using Terraform Cloud"
     topics      = ["github", "terraform"]
   },
   {
     name        = "hashicorp-vagrant-rocky"
-    description = "This repo provisions a general purpose Rocky Linux VM using Hashicorp Vagrant."
+    description = "Deployment of a general purpose Rocky Linux VM using Hashicorp Vagrant"
     topics      = ["vagrant"]
   },
   {
     name        = "hashicorp-vagrant-box"
-    description = "Pre-configured Vagrant Cloud box with the required tools for engineers working on all www.delineate.io projects"
+    description = "Pre-configured Vagrant Cloud box with the required tools for engineers"
     topics      = ["ansible", "devops", "vagrant", "virtualbox"]
     archived    = true
     visibility  = "private"
   },
   {
     name        = "k8s-go-tool-example"
-    description = "This repo shows several k8s and container tools for golang used together for a development workflow"
+    description = "Several k8s & container tools for development of Go services"
     topics      = ["golang", "devops", "k8s"]
   },
   {
@@ -83,33 +83,39 @@ repos = [
   },
   {
     name        = "multi-service-shared-cache"
-    description = "This repo demonstrates load balanced services using redis"
-    topics      = ["golang", "redis"]
+    description = "Two load balanced Go services using the same redis database"
+    topics      = ["golang", "redis", "traefik", "docker-compose"]
   },
   {
     name        = "ngrok-example"
-    description = "This repo provides an example of using ngrok"
-    topics      = ["devops"]
+    description = "Different use cases of ngrok exposing local endpoints"
+    topics      = ["devops", "ngrok"]
   },
   {
     name        = "oss-template"
-    description = "This is a template for personal repos that includes standard boilerplate set up"
+    description = "Template for OSS repos with a standard boilerplate"
     topics      = ["gcp", "github", "terraform"]
     is_template = true
   },
   {
     name        = "local-cloud-functions-example"
-    description = "This repo demonstrates an example of local http and pub/sub cloud functionss"
+    description = "Demonstrates building and running http and pub/sub cloud functions locally"
     topics      = ["gcp", "gcp-cloud-function", "python"]
   },
   {
     name        = "python-mongodb-api"
-    description = "This repo demonstrates using building a Python API using FastAPI & MongoDB"
+    description = "Example of building a Python API using FastAPI & MongoDB"
     topics      = ["fastapi", "mongodb", "python"]
   },
   {
+    name        = "go-neat"
+    description = "Opinionated Git utility CLI written in Go"
+    topics      = ["go", "viper", "cobra", "go-git", ]
+    visibility  = "private"
+  },
+  {
     name        = "mac-ansible-script"
-    description = "This repo shows install and configuration"
+    description = "Management of MacOS machines using Readhat Ansible"
     topics      = ["ansible"]
     visibility  = "private"
   }

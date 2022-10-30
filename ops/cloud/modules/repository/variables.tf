@@ -84,7 +84,7 @@ locals {
   template_owner    = var.is_template ? "" : lower(local.template_parts[0])
   template_name     = var.is_template ? "" : lower(local.template_parts[1])
   name              = lower(var.name)
-  description       = lower(var.description)
+  description       = var.description
   homepage_url      = lower(var.homepage_url)
   visibility        = lower(var.visibility)
   branch_protection = local.visibility == "public" && var.branch_protection

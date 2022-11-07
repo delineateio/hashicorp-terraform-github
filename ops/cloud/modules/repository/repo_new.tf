@@ -12,6 +12,8 @@ resource "github_repository" "this" {
   allow_merge_commit                      = false
   allow_squash_merge                      = false
   allow_rebase_merge                      = true
+  allow_auto_merge                        = true
+  allow_update_branch                     = true
   squash_merge_commit_title               = "PR_TITLE"
   squash_merge_commit_message             = "PR_BODY"
   delete_branch_on_merge                  = var.is_vercel_project || var.archived ? false : true

@@ -25,6 +25,4 @@ RUN pip install --no-cache --upgrade pip setuptools
 RUN pip install -r /usr/requirements.txt
 
 # init ---------------------------------------------------------------------------
-
-RUN echo "source /home/vscode/.devcontainer.env" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc
 RUN echo "task init" | tee -a /home/vscode/.bashrc >> /home/vscode/.zshrc

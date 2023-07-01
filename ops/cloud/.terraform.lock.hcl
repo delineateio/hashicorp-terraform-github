@@ -5,6 +5,7 @@ provider "registry.terraform.io/integrations/github" {
   version     = "5.12.0"
   constraints = ">= 5.3.0, < 6.0.0"
   hashes = [
+    "h1:FekANF/dJlp0dmRXxVgOxJRwX0ZNcjtoIbJhshwsZ9Y=",
     "h1:M4TrKADwjuTO8LKL7BNH3v8aS27sWEl4AqIlac20lRs=",
     "h1:ZamtdBeFAMzHLPk1MKbdDLRd7GksrgxF9dg08fUzPds=",
     "zh:041b44fff2004656f474cefe75ab0df27fda5163f97d774987e3b62cf6c706a0",
@@ -29,6 +30,7 @@ provider "registry.terraform.io/mastercard/restapi" {
   constraints = ">= 1.17.0, < 2.0.0"
   hashes = [
     "h1:HON0cQCOHeTrX04hEqt4pQRstqYYrwQcYUbG6aZhu7I=",
+    "h1:OT1ph2OjqsOJSoWi0iKCfKcI3EXq14IZny3dGDiwi+w=",
     "h1:qWT/XNrX6T+VBlmz20QKkeGsEdu2KrC29G1rEX6wkRM=",
     "zh:10c12bdb27c12b9a13c65bf110ecbae1e23931ba87b656554fca8dd48da2fe8e",
     "zh:1c3e89cf19118fc07d7b04257251fc9897e722c16e0a0df7b07fcd261f8c12e7",

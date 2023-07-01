@@ -64,7 +64,7 @@ Further logos can be inserted to highlight the specific technologies used to cre
 <!-- GETTING STARTED -->
 ## Terraform Cloud Setup
 
-A [Terarform Cloud](https://www.terraform.io/) acount will be required.  In this example there are two workspaces defined, these workspaces are configured using Terraform remote backend files [here](./ops/cloud/config/).
+A [Terraform Cloud](https://www.terraform.io/) account will be required.  In this example there are two workspaces defined, these workspaces are configured using Terraform remote backend files [here](./ops/cloud/config/).
 
 ![alt text](assets/terraform.png "Title")
 
@@ -73,7 +73,7 @@ Two env variables need to be configured in each Terraform Cloud workspace for Gi
 * `GITHUB_OWNER` should be set to the organisation slug
 * `GITHUB_TOKEN` is the GitHub personal access token (PAT)
 
-To create a new GitHub PAT then review the offical documentation [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+To create a new GitHub PAT then review the official documentation [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## Manage Repos
 

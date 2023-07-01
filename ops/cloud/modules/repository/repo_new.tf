@@ -23,6 +23,18 @@ resource "github_repository" "this" {
   ignore_vulnerability_alerts_during_read = false
   is_template                             = var.is_template
   auto_init                               = var.is_template
+  security_and_analysis {
+    advanced_security {
+      status = "enabled"
+    }
+    secret_scanning {
+      status = "enabled"
+    }
+    secret_scanning_push_protection {
+      status = "enabled"
+    }
+  }
+
   dynamic "template" {
     for_each = var.is_template ? [] : [1]
     content {

@@ -2,11 +2,13 @@
     "cSpell.words": [
         "devcontainer",
         "devcontainers",
+        "doctoc",
         "endswith",
         "gruntfuggly",
         "PTRACE",
         "seccomp",
         "tfrc",
+        "tfvars",
         "tyriar",
         "vercel"
     ]

@@ -24,9 +24,6 @@ resource "github_repository" "this" {
   is_template                             = var.is_template
   auto_init                               = var.is_template
   security_and_analysis {
-    advanced_security {
-      status = "enabled"
-    }
     secret_scanning {
       status = "enabled"
     }

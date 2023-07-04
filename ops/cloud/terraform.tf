@@ -3,7 +3,7 @@ terraform {
   required_providers {
     github = {
       source  = "integrations/github"
-      version = ">= 5.3.0, < 6.0.0"
+      version = ">= 5.9.0, < 6.0.0"
     }
     restapi = {
       source  = "registry.terraform.io/mastercard/restapi"

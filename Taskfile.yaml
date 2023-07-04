@@ -17,4 +17,4 @@ tasks:
   pre-commit:init:
     desc: initialises pre-commit hooks
     cmds:
-      - pre-commit install &>/dev/null &
+      - pre-commit install

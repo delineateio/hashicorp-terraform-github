@@ -65,13 +65,6 @@ repos = [
     topics      = ["vagrant", "linux"]
   },
   {
-    name        = "hashicorp-vagrant-box"
-    description = "Pre-configured Vagrant Cloud box with the required tools for engineers"
-    topics      = ["ansible", "devops", "vagrant", "virtualbox"]
-    archived    = true
-    visibility  = "private"
-  },
-  {
     name        = "k8s-go-tool-example"
     description = "Several k8s & container tools for development of Go services"
     topics      = ["golang", "devops", "k8s", "skaffold", "ko"]

@@ -47,8 +47,11 @@ repos:
   - id: terraform_validate
     name: terraform validation
     args:
+      - --tf-init-args=-upgrade
+      - --tf-init-args=-lockfile=readonly
       - --args=-json
   - id: terraform_providers_lock
     name: terraform providers lock
     args:
+        - --hook-config=--mode=always-regenerate-lockfile
         - --args=-platform=linux_amd64

@@ -6,8 +6,7 @@ provider "registry.terraform.io/integrations/github" {
   constraints = ">= 5.3.0, >= 5.9.0, < 6.0.0"
   hashes = [
     "h1:73f1cQN2fExYG78UL28xBBabI+8AjNrB6lsHPxP4JBA=",
-    "h1:aBWMe1NWNo4XV0c2qPh4k3Sz+OCWLmag97vb/gN8GuM=",
-    "h1:vrkktGyd2Wc5ZNi3ZXImuTtK4DlnSqOSx5O8rGMv6as=",
+    "h1:VPoL/2t4oqDHcAPURfmPz9k6tGxEctHUt3gaoxjYfUk=",
     "zh:0070a5e07e3f1a0455e1f12d089264fc7332a1a8118d02130b60724b83862d9d",
     "zh:1c5e4b81520601d1f9a3d8163e2ac027c6cb60874ce3ef781a9bde6afac9830c",
     "zh:26f6a5504af4f94f7c9f5ac6d10ff3e776825e7e9889e49ff4e5b7aed3e29bf6",
@@ -30,8 +29,7 @@ provider "registry.terraform.io/mastercard/restapi" {
   constraints = ">= 1.17.0, < 2.0.0"
   hashes = [
     "h1:/i7MdSObBjkXN8jOnebq1B36w9hR/MNlqenFXtO1V5Q=",
-    "h1:9EkSEQl8KL0CHLQk3JFhTHz3o2c6aJDMr7dR6CN8jeI=",
-    "h1:WEOJPf7SKRmro083HT3Zg2TVVvMPwtnr5bCq7ATY4Hs=",
+    "h1:ECz/wIY86EpqlpW9iz2WhWDWDUCwL3bWt5vhduh5+os=",
     "zh:1c3e89cf19118fc07d7b04257251fc9897e722c16e0a0df7b07fcd261f8c12e7",
     "zh:39da077af95f9a412e2621871977be1ef00df0eebe46771aaa79c58bc2f75395",
     "zh:3a97187007f87a8bc5f56705164970e479f4b73b9f95379a4a103b29dc55b8c2",

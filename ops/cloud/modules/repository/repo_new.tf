@@ -24,19 +24,6 @@ resource "github_repository" "this" {
   is_template                             = var.is_template
   auto_init                               = var.is_template
   security_and_analysis {
-
-    # dynamic "advanced_security" {
-
-    # for_each = local.visibility == "public" ? toset([]) : toset([1])
-
-    # content {
-    #     status = "enabled"
-    #   }
-    # }
-    advanced_security {
-      status = "enabled"
-    }
-
     secret_scanning {
       status = "enabled"
     }

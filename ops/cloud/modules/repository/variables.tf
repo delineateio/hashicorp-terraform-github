@@ -73,11 +73,6 @@ variable "is_vercel_project" {
   type        = bool
 }
 
-variable "is_testing" {
-  description = "indicates if this run is a testing run"
-  type        = bool
-}
-
 locals {
   root_team_name    = lower(var.root_team_name)
   template_parts    = split("/", var.default_template)

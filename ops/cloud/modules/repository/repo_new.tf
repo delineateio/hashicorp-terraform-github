@@ -1,6 +1,5 @@
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "this" {
-  count                                   = var.is_testing ? 0 : 1
   name                                    = local.name
   description                             = local.description
   homepage_url                            = local.homepage_url

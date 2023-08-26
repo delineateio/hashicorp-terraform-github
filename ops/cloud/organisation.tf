@@ -5,7 +5,7 @@ resource "github_organization_settings" "this" {
   email                                                    = local.email
   twitter_username                                         = local.twitter_username
   location                                                 = var.location
-  name                                                     = local.is_testing ? "${var.domain} (testing)" : var.domain
+  name                                                     = var.domain
   description                                              = var.description
   has_organization_projects                                = false
   has_repository_projects                                  = false

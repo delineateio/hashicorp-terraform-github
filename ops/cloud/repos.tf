@@ -1,6 +1,6 @@
 locals {
   all_repos      = { for r in var.repos : r.name => r }
-  filtered_repos = local.is_testing ? { for k, v in local.all_repos : k => v if k != "oss-template" } : local.all_repos
+  filtered_repos = local.all_repos
 }
 
 module "github" {
@@ -23,7 +23,6 @@ module "github" {
   is_template       = each.value.is_template
   default_template  = each.value.is_template ? "" : local.default_template
   is_vercel_project = each.value.is_vercel_project
-  is_testing        = local.is_testing
 
   # make sure org changes are made before applying repos
   depends_on = [

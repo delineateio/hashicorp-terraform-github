@@ -46,9 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This repo provides a Terraform configuration to manage a GitHub organisation.
-
-The solution uses Terraform Cloud as the centralised provisioning infrastructure to manage state and required secrets.  In this specific implementation two GitHub organisations are used, one for testing and one for production.
+This repo provides a Terraform configuration to manage a GitHub organisation.  The solution uses Terraform Cloud as the centralised provisioning infrastructure to manage state and required secrets.
 
 ## Built With
 

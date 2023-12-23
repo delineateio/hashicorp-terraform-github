@@ -60,11 +60,6 @@ repos = [
     topics      = ["github", "terraform"]
   },
   {
-    name        = "hashicorp-vagrant-rocky"
-    description = "Deployment of a general purpose Rocky Linux VM using Hashicorp Vagrant"
-    topics      = ["vagrant", "linux"]
-  },
-  {
     name        = "k8s-go-tool-example"
     description = "Several k8s & container tools for development of Go services"
     topics      = ["golang", "devops", "k8s", "skaffold", "ko"]
